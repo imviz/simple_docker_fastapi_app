@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+   sample_app:
+    build:
+      context: SIMPLE_FAST_API_APP/
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - .server/app:/app/app/
+
+    restart: unless-stopped
